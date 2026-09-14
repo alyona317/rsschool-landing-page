@@ -1,0 +1,30 @@
+{
+  "name": "rsschool-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alyona317/rsschool-landing-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alyona317/rsschool-landing-page/issues"
+  },
+  "homepage": "https://github.com/alyona317/rsschool-landing-page#readme",
+  "devDependencies": {
+    "sass": "^1.104.1",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "modern-normalize": "^3.0.1"
+  }
+}

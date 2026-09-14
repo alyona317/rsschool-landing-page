@@ -1,0 +1,29 @@
+
+dist
+dist-ssr
+
+# cache Vite
+.vite
+.vite-temp
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# variables environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# macOS
+.DS_Store
+
+# tests
+coverage
