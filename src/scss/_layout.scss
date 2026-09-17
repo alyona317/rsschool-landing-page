@@ -1,0 +1,49 @@
+@use "colors" as c;
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+
+.hero {
+  padding-block: v.spacing(8);
+  text-align: center;
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: v.spacing(2);
+  }
+
+  &__subtitle {
+    color: c.$color-muted;
+    font-size: 1.125rem;
+    max-width: 40ch;
+    margin-inline: auto;
+  }
+}
+
+.section {
+  padding-block: v.spacing(6);
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: v.spacing(3);
+  }
+}
+
+.card-grid {
+  @include m.flex($direction: column, $gap: v.spacing(3));
+
+  // Switch from a stacked column to a real grid once there's room
+  // for more than one card per row.
+  @include m.respond-to(tablet) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+.card {
+  @extend %surface;
+
+  &__title {
+    margin-bottom: v.spacing(1);
+  }
+}

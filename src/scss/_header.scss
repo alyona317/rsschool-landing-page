@@ -1,0 +1,65 @@
+@use "colors" as c;
+@use "typography" as t;
+@use "functions" as f;
+@use "mixins" as m;
+@use "placeholders";
+
+.site-header {
+  border-bottom: 1px solid c.$color-border;
+  padding-block: f.spacing(2);
+
+  &__inner {
+    @include m.flex($align: center, $justify: space-between, $gap: f.spacing(2), $wrap: wrap);
+  }
+
+  &__logo {
+    @extend %link-quiet;
+    font-family: t.$font-heading;
+    font-weight: t.$fw-heavy;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    color: c.$color-text;
+  }
+
+  &__nav {
+    @include m.flex($align: center, $gap: f.spacing(4));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    @extend %link-quiet;
+    font-weight: t.$fw-semibold;
+    font-size: 0.95rem;
+    color: c.$color-muted;
+
+    &:hover {
+      color: c.$color-text;
+    }
+
+    &.is-active {
+      color: c.$color-primary;
+    }
+  }
+
+  &__actions {
+    @include m.flex($align: center, $gap: f.spacing(2));
+  }
+
+  &__theme-toggle {
+    @include m.flex($align: center, $justify: center);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid c.$color-border;
+    background: c.$color-bg;
+    color: c.$color-text;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

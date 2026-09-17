@@ -1,0 +1,112 @@
+@use "colors" as c;
+@use "typography" as t;
+@use "functions" as f;
+@use "mixins" as m;
+@use "placeholders";
+
+.directions {
+  background: c.$color-primary;
+  color: c.$color-on-primary;
+  padding-block: f.spacing(8);
+
+  &__inner {
+    @extend %container;
+  }
+
+  &__title {
+    @include m.display-heading(t.$fs-h1);
+    color: c.$color-on-primary;
+    margin-bottom: f.spacing(5);
+    max-width: 20ch;
+  }
+
+  &__layout {
+    @include m.flex($gap: f.spacing(4), $align: flex-start);
+    flex-direction: column;
+
+    @include m.respond-to(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__tabs {
+    @include m.flex($direction: column, $gap: f.spacing(1.5));
+    flex: 0 0 auto;
+    width: 100%;
+
+    @include m.respond-to(tablet) {
+      width: 260px;
+    }
+  }
+
+  &__tab {
+    @include m.pill-button(transparent, c.$color-on-primary);
+    justify-content: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    width: 100%;
+    text-align: left;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 1;
+    }
+
+    &.is-active {
+      background: c.$color-on-primary;
+      color: c.$color-primary;
+      border-color: c.$color-on-primary;
+    }
+  }
+
+  &__panel {
+    @extend %surface;
+    color: c.$color-text;
+    flex: 1;
+    @include m.flex($gap: f.spacing(3));
+    flex-direction: column;
+
+    @include m.respond-to(tablet) {
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
+  &__media {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: f.spacing(1.5);
+    background: linear-gradient(135deg, c.$color-primary-light, c.$color-primary);
+
+    @include m.respond-to(tablet) {
+      width: 280px;
+    }
+  }
+
+  &__content {
+    @include m.flex($direction: column, $justify: center, $gap: f.spacing(2));
+    flex: 1;
+  }
+
+  &__name {
+    @include m.display-heading(t.$fs-h2);
+    text-transform: none;
+    color: c.$color-text;
+  }
+
+  &__description {
+    color: c.$color-muted;
+    font-size: t.$fs-body;
+    line-height: 1.7;
+
+    & + & {
+      margin-top: f.spacing(1);
+    }
+  }
+
+  &__action {
+    @extend %btn-accent;
+    align-self: flex-start;
+    margin-top: f.spacing(1);
+  }
+}

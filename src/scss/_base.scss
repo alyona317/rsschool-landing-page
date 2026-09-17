@@ -1,0 +1,46 @@
+@use "colors" as c;
+@use "typography" as t;
+@use "placeholders";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: t.$font-body;
+  font-weight: t.$fw-regular;
+  color: c.$color-text;
+  background: c.$color-bg;
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+  color: c.$color-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: c.$color-primary-dark;
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+.container {
+  @extend %container;
+}

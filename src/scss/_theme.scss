@@ -1,0 +1,39 @@
+// Defines every `--color-*` custom property that `_colors.scss` hands
+// out as Sass variables. `:root` holds the light theme (the default,
+// so the site still looks right if JS never runs); `html[data-theme="dark"]`
+// overrides the neutrals that should flip. Brand colors (primary/accent)
+// stay constant across themes on purpose — see _colors.scss.
+//
+// The toggle button (`[data-theme-toggle]` in the header) sets
+// `data-theme` on <html> and persists it to localStorage — see
+// initThemeToggle() in src/js/main.js. A small inline script in each
+// page's <head> applies the saved value before first paint so the page
+// never flashes the wrong theme.
+
+@use "colors" as c;
+
+:root {
+  --color-primary: #{c.$raw-primary};
+  --color-primary-dark: #{c.$raw-primary-dark};
+  --color-primary-light: #{c.$raw-primary-light};
+  --color-accent: #{c.$raw-accent};
+  --color-accent-dark: #{c.$raw-accent-dark};
+  --color-on-primary: #{c.$raw-on-primary};
+  --color-on-accent: #{c.$raw-on-accent};
+  --color-dark: #{c.$raw-dark};
+  --color-on-dark: #{c.$raw-on-dark};
+
+  --color-bg: #{c.$raw-bg-light};
+  --color-surface: #{c.$raw-surface-light};
+  --color-text: #{c.$raw-text-light};
+  --color-muted: #{c.$raw-muted-light};
+  --color-border: #{c.$raw-border-light};
+}
+
+html[data-theme="dark"] {
+  --color-bg: #{c.$raw-bg-dark};
+  --color-surface: #{c.$raw-surface-dark};
+  --color-text: #{c.$raw-text-dark};
+  --color-muted: #{c.$raw-muted-dark};
+  --color-border: #{c.$raw-border-dark};
+}

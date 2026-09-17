@@ -1,0 +1,90 @@
+@use "colors" as c;
+@use "variables" as v;
+@use "typography" as t;
+@use "functions" as f;
+@use "mixins" as m;
+@use "placeholders";
+
+.teachers {
+  padding-block: f.spacing(9);
+
+  &__inner {
+    @extend %container;
+  }
+
+  &__head {
+    @include m.flex($justify: space-between, $align: center, $gap: f.spacing(2), $wrap: wrap);
+    margin-bottom: f.spacing(5);
+  }
+
+  &__title {
+    @include m.display-heading(t.$fs-h1);
+    color: c.$color-text;
+  }
+
+  &__controls {
+    @include m.flex($align: center, $gap: f.spacing(3));
+    font-weight: t.$fw-semibold;
+    color: c.$color-text;
+  }
+
+  &__control-btn {
+    @include m.flex($align: center, $justify: center);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid c.$color-border;
+    background: c.$color-bg;
+    color: c.$color-text;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__track {
+    @include m.flex($gap: f.spacing(3), $wrap: wrap);
+  }
+}
+
+.teacher-card {
+  flex: 1 1 220px;
+  min-width: 220px;
+
+  &__photo {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: v.$radius-md;
+    overflow: hidden;
+    background: linear-gradient(160deg, c.$color-accent 0%, c.$color-accent-dark 100%);
+    margin-bottom: f.spacing(2);
+  }
+
+  &__blob {
+    position: absolute;
+    inset: 0;
+    color: c.$color-primary;
+    opacity: 0.35;
+  }
+
+  &__name {
+    font-family: t.$font-heading;
+    font-weight: t.$fw-heavy;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: f.spacing(0.5);
+  }
+
+  &__styles {
+    color: c.$color-muted;
+    font-size: t.$fs-small;
+    margin-bottom: f.spacing(1);
+  }
+
+  &__link {
+    font-weight: t.$fw-semibold;
+    font-size: t.$fs-small;
+  }
+}

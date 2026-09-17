@@ -1,0 +1,55 @@
+// Color palette — the only file allowed to define literal color values.
+// Everything else references these via `@use "colors" as c;`.
+//
+// Every name below resolves to a CSS custom property (`var(--color-*)`),
+// not a literal color — that's what lets the whole site react instantly
+// to `<html data-theme="dark">` without touching a single component
+// file. The actual custom properties are declared in `_theme.scss`,
+// which reads the `$raw-*` values at the bottom of this file.
+
+// Brand — same value in both themes
+$color-primary: var(--color-primary); // section backgrounds, primary buttons, links
+$color-primary-dark: var(--color-primary-dark); // hover/active state for primary
+$color-primary-light: var(--color-primary-light); // tints, focus rings
+
+$color-accent: var(--color-accent); // CTA buttons, highlights
+$color-accent-dark: var(--color-accent-dark); // accent hover state
+
+$color-dark: var(--color-dark); // permanently-dark sections (hero)
+$color-on-dark: var(--color-on-dark);
+
+// Text placed on a colored background
+$color-on-primary: var(--color-on-primary);
+$color-on-accent: var(--color-on-accent);
+
+// Neutrals — these are the ones that actually flip between themes
+$color-bg: var(--color-bg); // page background
+$color-surface: var(--color-surface); // card/panel background
+$color-text: var(--color-text);
+$color-muted: var(--color-muted);
+$color-border: var(--color-border);
+
+// Raw values — consumed only by _theme.scss to build the custom
+// properties above. Nothing else should reference a $raw-* variable
+// directly; go through the names above instead.
+$raw-primary: #4c56e8;
+$raw-primary-dark: #3a43be;
+$raw-primary-light: #6b74ee;
+$raw-accent: #f5a623;
+$raw-accent-dark: #dd9010;
+$raw-on-primary: #ffffff;
+$raw-on-accent: #ffffff;
+$raw-dark: #14141b;
+$raw-on-dark: #ffffff;
+
+$raw-bg-light: #ffffff;
+$raw-surface-light: #ffffff;
+$raw-text-light: #14141b;
+$raw-muted-light: #6b7280;
+$raw-border-light: #e5e7eb;
+
+$raw-bg-dark: #121218;
+$raw-surface-dark: #1e1e28;
+$raw-text-dark: #f2f2f5;
+$raw-muted-dark: #9aa0ac;
+$raw-border-dark: #32323f;

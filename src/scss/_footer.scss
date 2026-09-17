@@ -1,0 +1,75 @@
+@use "colors" as c;
+@use "typography" as t;
+@use "functions" as f;
+@use "mixins" as m;
+@use "placeholders";
+
+.site-footer {
+  background: c.$color-primary;
+  color: c.$color-on-primary;
+  padding-block: f.spacing(9) f.spacing(5);
+
+  &__inner {
+    @extend %container;
+  }
+
+  &__title {
+    @include m.display-heading(t.$fs-h1);
+    color: c.$color-on-primary;
+    margin-bottom: f.spacing(5);
+  }
+
+  &__grid {
+    @include m.flex($gap: f.spacing(5), $wrap: wrap, $justify: space-between);
+  }
+
+  &__block {
+    flex: 1 1 220px;
+  }
+
+  &__label {
+    @extend %badge;
+    background: rgba(255, 255, 255, 0.15);
+    margin-bottom: f.spacing(1.5);
+  }
+
+  &__link,
+  &__text {
+    display: block;
+    color: c.$color-on-primary;
+    font-size: t.$fs-body;
+    margin-bottom: f.spacing(1);
+
+    &:hover {
+      color: c.$color-on-primary;
+      opacity: 0.8;
+    }
+  }
+
+  &__socials {
+    @include m.flex($gap: f.spacing(1.5));
+    margin-top: f.spacing(2);
+  }
+
+  &__social {
+    @include m.flex($align: center, $justify: center);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: c.$color-on-primary;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__bottom {
+    margin-top: f.spacing(6);
+    padding-top: f.spacing(3);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: t.$fs-small;
+    color: rgba(255, 255, 255, 0.75);
+  }
+}

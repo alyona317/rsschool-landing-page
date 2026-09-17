@@ -1,0 +1,98 @@
+@use "sass:map";
+@use "variables" as v;
+@use "typography" as t;
+@use "functions" as f;
+
+// Flexbox shorthand for the row/column groupings used throughout the
+// header, direction tabs, pricing grid and teacher cards.
+@mixin flex($direction: row, $align: stretch, $justify: flex-start, $gap: 0, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// Media query keyed off the $breakpoints map in _variables.scss.
+// Usage: @include respond-to(tablet) { ... }
+@mixin respond-to($breakpoint) {
+  @if map.has-key(v.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint `#{$breakpoint}`. Check $breakpoints in _variables.scss.";
+  }
+}
+
+// Bold, uppercase display type — used for every section headline
+// (hero, "ТАНЦЕВАЛЬНЫЕ НАПРАВЛЕНИЯ", "СТОИМОСТЬ ЗАНЯТИЙ", ...).
+@mixin display-heading($size: t.$fs-h1) {
+  font-family: t.$font-heading;
+  font-weight: t.$fw-heavy;
+  font-size: $size;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+// A solid, pill-shaped button. Pass any two colors — the button
+// only cares about background/foreground, not which brand color.
+@mixin pill-button($bg, $fg) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: f.spacing(1);
+  border: none;
+  border-radius: v.$radius-pill;
+  padding: f.spacing(2) f.spacing(4);
+  font-family: t.$font-body;
+  font-weight: t.$fw-semibold;
+  font-size: t.$fs-small;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: $bg;
+  color: $fg;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Clamp text to a fixed number of lines (falls back to a single-line
+// ellipsis when $lines is 1).
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+  }
+}
+
+// Hide content visually while keeping it available to screen readers.
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

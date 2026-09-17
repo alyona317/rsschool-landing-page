@@ -1,0 +1,145 @@
+@use "colors" as c;
+@use "typography" as t;
+@use "functions" as f;
+@use "mixins" as m;
+@use "placeholders";
+
+.pricing {
+  padding-block: f.spacing(9);
+
+  &__inner {
+    @extend %container;
+  }
+
+  &__head {
+    @include m.flex($justify: space-between, $align: flex-start, $gap: f.spacing(3), $wrap: wrap);
+    margin-bottom: f.spacing(5);
+  }
+
+  &__title {
+    @include m.display-heading(t.$fs-h1);
+    color: c.$color-text;
+    max-width: 14ch;
+  }
+
+  &__note {
+    max-width: 280px;
+    color: c.$color-muted;
+    font-size: t.$fs-small;
+    line-height: 1.6;
+    display: flex;
+    gap: f.spacing(1);
+
+    svg {
+      flex: none;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+    }
+  }
+
+  &__layout {
+    @include m.flex($gap: f.spacing(3), $align: stretch);
+    flex-direction: column;
+
+    @include m.respond-to(desktop) {
+      flex-direction: row;
+    }
+  }
+}
+
+.signup-card {
+  @extend %surface;
+  background: c.$color-primary;
+  color: c.$color-on-primary;
+  @include m.flex($direction: column, $gap: f.spacing(2));
+  flex: 0 0 auto;
+  width: 100%;
+
+  @include m.respond-to(desktop) {
+    width: 320px;
+  }
+
+  &__title {
+    @include m.display-heading(t.$fs-h2);
+    text-transform: none;
+    color: c.$color-on-primary;
+  }
+
+  &__text {
+    font-size: t.$fs-small;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  &__field {
+    width: 100%;
+    border: none;
+    border-radius: f.spacing(3);
+    padding: f.spacing(1.5) f.spacing(2);
+    font-family: t.$font-body;
+    font-size: t.$fs-body;
+    background: c.$color-on-primary;
+    color: c.$color-text;
+
+    &::placeholder {
+      color: c.$color-muted;
+    }
+  }
+
+  &__submit {
+    @include m.pill-button(c.$color-on-primary, c.$color-primary);
+    margin-top: f.spacing(1);
+  }
+}
+
+.price-grid {
+  @include m.flex($gap: f.spacing(2), $wrap: wrap);
+  flex: 1;
+
+  > * {
+    flex: 1 1 calc(50% - #{f.spacing(2)});
+    min-width: 220px;
+  }
+}
+
+.price-card {
+  @extend %surface;
+  border: 1px solid c.$color-border;
+  position: relative;
+
+  &__title {
+    font-weight: t.$fw-bold;
+    font-size: 1.1rem;
+    margin-bottom: f.spacing(2);
+  }
+
+  &__old {
+    color: c.$color-muted;
+    font-size: t.$fs-small;
+    text-decoration: line-through;
+  }
+
+  &__new {
+    font-weight: t.$fw-heavy;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  &__arrow {
+    @include m.flex($align: center, $justify: center);
+    position: absolute;
+    right: f.spacing(2);
+    bottom: f.spacing(2);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: c.$color-primary;
+    color: c.$color-on-primary;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
