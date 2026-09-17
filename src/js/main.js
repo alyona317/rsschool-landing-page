@@ -14,3 +14,13 @@ function highlightActiveNavLink() {
 }
 
 document.addEventListener('DOMContentLoaded', highlightActiveNavLink);
+
+   const button = document.querySelector("[data-theme-toggle]")
+    button.addEventListener('click', ()=>{
+        const newTheme = currentThemeSetting === 'dark' ? 'light' : 'dark';
+        const newText = newTheme === 'dark' ? "Change to light theme" : "Change to dark theme";
+        button.setAttribute("aria-lable", newText);
+        document.querySelector("html").setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        currentThemeSetting = newTheme;
+    })

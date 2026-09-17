@@ -10,7 +10,25 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+ <script>
+        const localStorageTheme = localStorage.getItem("theme");
+    const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+        
+    function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+        if (localStorageTheme !== null) {
+            return localStorageTheme;
+        }
 
+        if (systemSettingDark.matches) {
+            return "dark";
+        }
+
+        return "light";
+        
+    }
+    
+    let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+    document.documentElement.setAttribute("data-theme", currentThemeSetting);</script>
   </head>
   <body>
     <header class="header">
@@ -18,17 +36,17 @@
         <a class="header__logo" href="/index.html"></a>
         <nav>
           <ul class="header__nav">
-            <li><a class="header__link" href="/index.html"></a></li>
-            <li><a class="header__link" href="/about.html">Dance styles</a></li>
-            <li><a class="header__link" href="/about.html">Price</a></li>
-            <li><a class="header__link" href="/about.html">Teachers</a></li>
-            <li><a class="header__link" href="/about.html">Contacts</a></li>
+            <li><a class="header__link" href="#directions">Стили танца</a></li>
+            <li><a class="header__link" href="#pricing">Стоимость</a></li>
+            <li><a class="header__link" href="#teachers">Педагоги</a></li>
+            <li><a class="header__link" href="#contacts">Контакты</a></li>
           </ul>
         </nav>
          <div class="header__actions">
-          <button class="header__switcher" type="button" aria-label="Переключить тему">
+          <button class="header__switcher" type="button" data-theme-toggle aria-label="Переключить тему">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.3"/><path d="M12 2.5v2.8M12 18.7v2.8M4.4 4.4l2 2M17.6 17.6l2 2M2.5 12h2.8M18.7 12h2.8M4.4 19.6l2-2M17.6 6.4l2-2"/></svg>
           </button>
+
       </div>
     </header>
 
@@ -40,7 +58,7 @@
         </p>
  <button class="callButton__action" type="button">Записаться</button>
       </section>
-<section class="directions">
+<section class="directions" id="directions">
         <div class="directions__inner">
           <h2 class="directions__title">Танцевальные направления</h2>
           <div class="directions__layout">
@@ -64,7 +82,7 @@
           </div>
         </div>
       </section>
-      <section class="pricing">
+      <section class="pricing" id="pricing">
         <div class="pricing__inner">
           <div class="pricing__head">
             <h2 class="pricing__title">Стоимость занятий</h2>
@@ -110,7 +128,7 @@
           </div>
         </div>
       </section>
-      <section class="teachers">
+      <section class="teachers" id="teachers">
         <div class="teachers__inner">
           <div class="teachers__head">
             <h2 class="teachers__title">Педагоги</h2>
@@ -162,7 +180,7 @@
       
     </main>
 
-<footer class="site-footer">
+<footer class="site-footer" id="contacts">
       <div class="site-footer__inner">
         <h2 class="site-footer__title">Контакты</h2>
         <div class="site-footer__grid">

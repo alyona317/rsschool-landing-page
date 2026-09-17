@@ -4,7 +4,7 @@
 @use "mixins" as m;
 @use "placeholders";
 
-.site-header {
+.header {
   border-bottom: 1px solid c.$color-border;
   padding-block: f.spacing(2);
 
@@ -47,7 +47,7 @@
     @include m.flex($align: center, $gap: f.spacing(2));
   }
 
-  &__theme-toggle {
+  &__switcher {
     @include m.flex($align: center, $justify: center);
     width: 40px;
     height: 40px;
