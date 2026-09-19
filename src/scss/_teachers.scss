@@ -45,13 +45,14 @@
   }
 
   &__track {
-    @include m.flex($gap: f.spacing(3), $wrap: wrap);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: f.spacing(3);
   }
 }
 
 .teacher-card {
-  flex: 1 1 220px;
-  min-width: 220px;
+
 
   &__photo {
     position: relative;
