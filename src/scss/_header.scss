@@ -13,12 +13,7 @@
   }
 
   &__logo {
-    @extend %link-quiet;
-    font-family: t.$font-heading;
-    font-weight: t.$fw-heavy;
-    font-size: 1.25rem;
-    letter-spacing: -0.01em;
-    color: c.$color-text;
+    max-width: 150px;
   }
 
   &__nav {

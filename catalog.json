@@ -14,7 +14,7 @@
       "duration": "60 мин",
       "image": "/images/teachers/boys/happy-guy.gif"
     },
-        {
+    {
       "id": "hip-hop",
       "category": "boys",
       "name": "Хип-хоп",
@@ -54,7 +54,7 @@
       "duration": "60 мин",
       "image": "/images/teachers/boys/ballet.gif"
     },
-        {
+    {
       "id": "ballet",
       "category": "boys",
       "name": "Балет",
@@ -62,7 +62,7 @@
       "duration": "60 мин",
       "image": "/images/teachers/boys/jim.gif"
     },
-        {
+    {
       "id": "contemp",
       "category": "boys",
       "name": "Контемп",
@@ -70,7 +70,7 @@
       "duration": "60 мин",
       "image": "/images/teachers/boys/backrooms.gif"
     },
-        {
+    {
       "id": "acting",
       "category": "boys",
       "name": "Актёрское мастерство в танце",
@@ -96,7 +96,6 @@
       "image": "/images/teachers/girls/mean_girls.gif"
     },
 
-
     {
       "id": "dancehall",
       "category": "girls",
@@ -121,7 +120,7 @@
       "duration": "45 мин",
       "image": "/images/teachers/girls/stepUp.gif"
     },
-        {
+    {
       "id": "bachata",
       "category": "copules",
       "name": "Бачата",
@@ -129,7 +128,7 @@
       "duration": "55 мин",
       "image": "/images/teachers/couples/dirty-dancing.gif"
     },
-            {
+    {
       "id": "salsa",
       "category": "copules",
       "name": "Сальса",
@@ -137,7 +136,7 @@
       "duration": "55 мин",
       "image": "/images/teachers/couples/fiction.gif"
     },
-            {
+    {
       "id": "hastle",
       "category": "copules",
       "name": "Хастл",
