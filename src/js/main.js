@@ -1,9 +1,11 @@
-// Reset first, then our own styles.
 import 'modern-normalize/modern-normalize.css';
 import '../scss/main.scss';
+import { renderDirectionCards } from './catalog.js';
 
 // Highlight the nav link matching the current page.
-function highlightActiveNavLink() {
+document.addEventListener('DOMContentLoaded', () => {
+  renderDirectionCards();
+ function highlightActiveNavLink() {
   const links = document.querySelectorAll('.site-header__link');
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/index.html';
 
@@ -24,3 +26,6 @@ document.addEventListener('DOMContentLoaded', highlightActiveNavLink);
         localStorage.setItem("theme", newTheme);
         currentThemeSetting = newTheme;
     })
+
+})
+
