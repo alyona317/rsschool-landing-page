@@ -44,15 +44,31 @@
     }
   }
 
-  &__track {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: f.spacing(3);
-  }
+&__track {
+  display: flex;
+  align-items: stretch; // все карточки в ряду — одной высоты, по самой высокой
+  gap: f.spacing(3);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
 }
 
 .teacher-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 280px; // мобильный — фиксированные 280px, не меняются
+  min-width: 0;
+  scroll-snap-align: start;
 
+  @include m.respond-to(tablet) {
+    
+    flex: 0 0 340px; // фиксированные 340px на планшете
+  }
+
+  @include m.respond-to(desktop) {
+    flex: 0 0 360px; // фиксированные 360px на десктопе
+  }
 
   &__photo {
     position: relative;
@@ -85,6 +101,7 @@
   }
 
   &__link {
+    margin-top: auto;
     font-weight: t.$fw-semibold;
     font-size: t.$fs-small;
   }
