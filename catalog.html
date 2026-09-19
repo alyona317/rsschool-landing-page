@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+ <script>
+        const localStorageTheme = localStorage.getItem("theme");
+    const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+        
+    function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+        if (localStorageTheme !== null) {
+            return localStorageTheme;
+        }
+
+        if (systemSettingDark.matches) {
+            return "dark";
+        }
+
+        return "light";
+        
+    }
+    
+    let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+    document.documentElement.setAttribute("data-theme", currentThemeSetting);</script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="header__logo" href="/index.html"></a>
+        <nav>
+          <ul class="header__nav">
+            <li><a class="header__link" href="index.html">Главная</a></li>
+            <li><a class="header__link" href="#teachers">Педагоги</a></li>
+            <li><a class="header__link" href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+         <div class="header__actions">
+          <button class="header__switcher" type="button" data-theme-toggle aria-label="Переключить тему">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.3"/><path d="M12 2.5v2.8M12 18.7v2.8M4.4 4.4l2 2M17.6 17.6l2 2M2.5 12h2.8M18.7 12h2.8M4.4 19.6l2-2M17.6 6.4l2-2"/></svg>
+          </button>
+      </div>
+    </header>
+     <script type="module" src="/src/js/main.js"></script>
+    </body>
+    </html>
