@@ -12,14 +12,15 @@
   }
 
   &__head {
-    @include m.flex($justify: space-between, $align: flex-start, $gap: f.spacing(3), $wrap: wrap);
-    margin-bottom: f.spacing(5);
+    @include m.flex($justify: space-between, $align: flex-start, $gap: 0, $wrap: wrap);
+    margin-bottom: f.spacing(1);
   }
 
   &__title {
-    @include m.display-heading(t.$fs-h1);
+    @include m.display-heading(clamp(1.75rem, 8vw, 4.5rem));
     color: c.$color-text;
     max-width: 14ch;
+    margin: 0;
   }
 
   &__note {

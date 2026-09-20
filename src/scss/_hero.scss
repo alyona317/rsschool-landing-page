@@ -53,7 +53,7 @@
   }
 
 &__title {
-  @include m.display-heading(t.$fs-display);
+  @include m.display-heading(clamp(2.25rem, 11vw, 6rem));
 
   position: relative;
   margin: f.spacing(8) 0 f.spacing(4);
