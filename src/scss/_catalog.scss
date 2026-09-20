@@ -30,7 +30,7 @@
   @include m.flex($justify: center, $gap: f.spacing(1.5), $wrap: wrap, $align: center);
   padding-bottom: f.spacing(5);
   flex-direction: column;
-  
+
 
   &__title {
     @include m.display-heading(clamp(1.75rem, 8vw, 4.5rem));
@@ -49,21 +49,36 @@
     &.is-active {
       @include m.pill-button(c.$color-primary, c.$color-on-primary);
     }
-      &:hover {
-    box-shadow: 0 12px 24px rgba(20, 20, 27, 0.08);
-    transform: translateY(-2px) scale(1.06);
-  }
+
+    &:hover {
+      box-shadow: 0 12px 24px rgba(20, 20, 27, 0.08);
+      transform: translateY(-2px) scale(1.06);
+    }
   }
 }
 
 .direction-grid {
   padding-bottom: f.spacing(5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__inner {
     @extend %container;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: f.spacing(3);
+  }
+
+  &__more {
+    @include m.pill-button(transparent, c.$color-text);
+    border: 1px solid c.$color-border;
+    margin: f.spacing(5) auto 0;
+
+    &:hover {
+      box-shadow: 0 12px 24px rgba(20, 20, 27, 0.08);
+      transform: translateY(-2px) scale(1.06);
+    }
   }
 }
 
@@ -74,7 +89,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
-  
+
 
   &:hover {
     box-shadow: 0 12px 24px rgba(20, 20, 27, 0.08);
@@ -117,17 +132,17 @@
   }
 
   &__media {
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, c.$color-primary-light, c.$color-primary);
-  overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, c.$color-primary-light, c.$color-primary);
+    overflow: hidden;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
   }
-}
 }
 
 .show-more {

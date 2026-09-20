@@ -1,6 +1,5 @@
 @use "variables" as v;
 
-// Multiply the base spacing unit — spacing(3) => 24px.
 @function spacing($multiplier) {
   @return v.$spacing-unit * $multiplier;
 }

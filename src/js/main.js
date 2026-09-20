@@ -2,7 +2,6 @@ import 'modern-normalize/modern-normalize.css';
 import '../scss/main.scss';
 import { renderDirectionCards } from './catalog.js';
 
-// Highlight the nav link matching the current page.
 document.addEventListener('DOMContentLoaded', () => {
   renderDirectionCards();
  function highlightActiveNavLink() {

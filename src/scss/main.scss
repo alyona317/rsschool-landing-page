@@ -1,14 +1,3 @@
-// Entry stylesheet — imported once from src/js/main.js.
-// modern-normalize is loaded separately as plain CSS (see main.js) so it
-// stays untouched by the Sass module system.
-//
-// Foundation partials (_colors, _typography, _variables, _functions,
-// _mixins, _placeholders) hold no CSS of their own — they're pulled in
-// by whichever component partial below needs them. _theme is the
-// exception: it emits the `--color-*` custom properties on :root /
-// html[data-theme="dark"] that _colors.scss's variables resolve to, so
-// it's @use'd here directly, up front.
-
 @use "theme";
 @use "base";
 @use "header";

@@ -9,15 +9,10 @@
   overflow: hidden;
   background-image: url("../../public/Dance.jpeg"); 
 
-  background-repeat: no-repeat;  /* Запрещает картинке повторяться */
-  background-size: cover;        /* Растягивает картинку на весь экран */
-  background-position: center;   /* Центрирует изображение */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
   background-attachment: fixed;  
-  // background:
-  
-  //   radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.08), transparent 45%),
-  //   linear-gradient(120deg, #202027 0%, c.$color-dark 55%, #0e0e12 100%);
-
   color: c.$color-on-dark;
   padding: f.spacing(6) 0 f.spacing(9);
 
@@ -35,7 +30,6 @@
     top: f.spacing(-6);
     right: f.spacing(3);
     text-align: right;
-    // max-width: 220px;
     white-space: normal;
     line-height: 1.3;
 

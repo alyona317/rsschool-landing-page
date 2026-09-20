@@ -1,15 +1,3 @@
-// Defines every `--color-*` custom property that `_colors.scss` hands
-// out as Sass variables. `:root` holds the light theme (the default,
-// so the site still looks right if JS never runs); `html[data-theme="dark"]`
-// overrides the neutrals that should flip. Brand colors (primary/accent)
-// stay constant across themes on purpose — see _colors.scss.
-//
-// The toggle button (`[data-theme-toggle]` in the header) sets
-// `data-theme` on <html> and persists it to localStorage — see
-// initThemeToggle() in src/js/main.js. A small inline script in each
-// page's <head> applies the saved value before first paint so the page
-// never flashes the wrong theme.
-
 @use "colors" as c;
 
 :root {

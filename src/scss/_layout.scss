@@ -32,8 +32,7 @@
 .card-grid {
   @include m.flex($direction: column, $gap: v.spacing(3));
 
-  // Switch from a stacked column to a real grid once there's room
-  // for more than one card per row.
+  
   @include m.respond-to(tablet) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

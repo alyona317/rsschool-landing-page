@@ -1,124 +1,123 @@
 {
   "categories": [
-    { "id": "girls", "label": "Девушка" },
-    { "id": "boys", "label": "Парень" },
-    { "id": "couples", "label": "Пара" },
-    { "id": "non-humans", "label": "Не человек" }
+    { "id": "single", "label": "Одиночные" },
+    { "id": "couples", "label": "Парные" },
+    { "id": "other", "label": "Другое" }
   ],
   "directions": [
     {
       "id": "hip-hop",
-      "category": "boys",
+      "category": "single",
       "name": "Хип-хоп",
       "description": "Уличный стиль с акцентом на ритм, характер и импровизацию.",
       "duration": "60 мин",
-      "image": "/images/teachers/boys/happy-guy.gif"
+      "image": "/images/teachers/single/happy-guy.gif"
     },
     {
       "id": "hip-hop",
-      "category": "boys",
+      "category": "single",
       "name": "Хип-хоп",
       "description": "Уличный стиль с акцентом на ритм, характер и импровизацию.",
       "duration": "60 мин",
-      "image": "/images/teachers/boys/dadah.gif"
+      "image": "/images/teachers/single/dadah.gif"
     },
     {
       "id": "strip-plastic",
-      "category": "boys",
+      "category": "single",
       "name": "Стрип-пластика",
       "description": "Пластика, женственность и уверенность в движении.",
       "duration": "55 мин",
-      "image": "/images/teachers/boys/stripper.gif"
+      "image": "/images/teachers/single/stripper.gif"
     },
     {
       "id": "break-dance",
-      "category": "boys",
+      "category": "single",
       "name": "Брейк данс",
       "description": "Акробатика, сила и техника на полу и в стойке.",
       "duration": "60 мин",
-      "image": "/images/teachers/boys/napolean.gif"
+      "image": "/images/teachers/single/napolean.gif"
     },
     {
       "id": "jazz-funk",
-      "category": "boys",
+      "category": "single",
       "name": "Джаз-фанк",
       "description": "Энергичный микс джаза и уличных стилей.",
       "duration": "60 мин",
-      "image": "/images/teachers/boys/borat.gif"
+      "image": "/images/teachers/single/borat.gif"
     },
     {
       "id": "ballet",
-      "category": "boys",
+      "category": "single",
       "name": "Балет",
       "description": "Классический танец: грация, техника и выразительность.",
       "duration": "60 мин",
-      "image": "/images/teachers/boys/ballet.gif"
+      "image": "/images/teachers/single/ballet.gif"
     },
     {
       "id": "ballet",
-      "category": "boys",
+      "category": "single",
       "name": "Балет",
       "description": "Классический танец: грация, техника и выразительность.",
       "duration": "60 мин",
-      "image": "/images/teachers/boys/jim.gif"
+      "image": "/images/teachers/single/jim.gif"
     },
     {
       "id": "contemp",
-      "category": "boys",
+      "category": "single",
       "name": "Контемп",
       "description": "Современный танец: свобода тела и выразительность.",
       "duration": "60 мин",
-      "image": "/images/teachers/boys/backrooms.gif"
+      "image": "/images/teachers/single/backrooms.gif"
     },
     {
       "id": "acting",
-      "category": "boys",
+      "category": "other",
       "name": "Актёрское мастерство в танце",
       "description": "Как передавать эмоции и образ через движение, а не только технику.",
       "duration": "55 мин",
-      "image": "/images/teachers/boys/friends2.gif"
+      "image": "/images/teachers/other/friends2.gif"
     },
 
     {
       "id": "jazz-funk",
-      "category": "girls",
+      "category": "single",
       "name": "Джаз-фанк",
       "description": "Энергичный микс джаза и уличных стилей.",
       "duration": "60 мин",
-      "image": "/images/teachers/girls/girl.gif"
+      "image": "/images/teachers/single/girl.gif"
     },
     {
       "id": "heels",
-      "category": "girls",
+      "category": "single",
       "name": "Хилс",
       "description": "Танец на каблуках: грация, растяжка и харизма.",
       "duration": "55 мин",
-      "image": "/images/teachers/girls/mean_girls.gif"
+      "image": "/images/teachers/single/mean_girls.gif"
     },
 
     {
       "id": "dancehall",
-      "category": "girls",
+      "category": "single",
       "name": "Дэнсхолл",
       "description": "Ямайская энергетика, характерные движения и драйв.",
       "duration": "55 мин",
-      "image": "/images/teachers/girls/diaz.gif"
+      "image": "/images/teachers/single/diaz.gif"
     },
     {
       "id": "contemp",
-      "category": "girls",
+      "category": "single",
       "name": "Контемп",
       "description": "Современный танец: свобода тела и выразительность.",
       "duration": "60 мин",
-      "image": "/images/teachers/girls/shake.gif"
+      "image": "/images/teachers/single/shake.gif"
     },
     {
       "id": "hip-hop",
-      "category": "kids",
+      "category": "single",
       "name": "Хип-хоп",
       "description": "Уличные движения в игровой форме — ритм, дружба и уверенность в себе.",
       "duration": "45 мин",
-      "image": "/images/teachers/girls/stepUp.gif"
+      "image": "/images/teachers/single/stepUp.gif"
     },
     {
       "id": "bachata",
@@ -151,6 +150,30 @@
       "description": "Это чувственный и романтичный танец с плавными движениями",
       "duration": "55 мин",
       "image": "/images/teachers/couples/30rocks.gif"
+    },
+    {
+      "id": "twerk",
+      "category": "single",
+      "name": "Тверк",
+      "description": "Современный танец, акцент на движениях таза и корпуса.",
+      "duration": "55 мин",
+      "image": "/images/teachers/other/pug.gif"
+    },
+    {
+      "id": "gymnastics",
+      "category": "single",
+      "name": "Гимнастика",
+      "description": "Физическая подготовка и развитие гибкости.",
+      "duration": "55 мин",
+      "image": "/images/teachers/other/gymnastics.gif"
+    },
+    {
+      "id": "parkur",
+      "category": "single",
+      "name": "Паркур",
+      "description": "Физическая подготовка и развитие гибкости.",
+      "duration": "55 мин",
+      "image": "/images/teachers/other/parkur.gif"
     }
   ]
 }

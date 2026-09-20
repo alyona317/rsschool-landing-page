@@ -1,7 +1,3 @@
-// Layout tokens — spacing, container width and breakpoints.
-// Colors live in `_colors.scss`, type tokens in `_typography.scss`,
-// the spacing() helper in `_functions.scss`.
-
 $container-max: 1180px;
 $spacing-unit: 8px;
 
@@ -9,7 +5,7 @@ $radius-sm: 8px;
 $radius-md: 16px;
 $radius-pill: 999px;
 
-// Breakpoints for the respond-to() mixin in _mixins.scss.
+
 $breakpoints: (
   mobile: 380px,
   tablet: 768px,
