@@ -72,5 +72,21 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     font-size: t.$fs-small;
     color: rgba(255, 255, 255, 0.75);
+    @include m.flex($align: center, $justify: center, $gap: f.spacing(5));
+  }
+
+  &__logo {
+    height: 28px;
+    width: auto;
+    display: block;
+    opacity: 0.9;
+  }
+  &__bottom__link{
+      color: c.$color-on-primary;
+    font-size: t.$fs-small;
+    &:hover {
+      color: c.$color-on-primary;
+      opacity: 0.8;
+    }
   }
 }
