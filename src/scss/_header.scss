@@ -13,8 +13,17 @@
   }
 
   &__logo {
-    max-width: 150px;
+        display: block;
+    width: 150px;
+    aspect-ratio: 2.7/1;
+    background-image: url(/public/step-up-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+[data-theme="dark"] & {
+  background-image: url(/public/step-up-logo-dark.svg);;
+}
   }
+ 
 
   &__nav {
     @include m.flex($align: center, $gap: f.spacing(4));
