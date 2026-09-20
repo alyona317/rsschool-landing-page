@@ -13,17 +13,19 @@
   }
 
   &__logo {
-        display: block;
+    display: block;
     width: 150px;
     aspect-ratio: 2.7/1;
     background-image: url(/public/step-up-logo.png);
     background-size: contain;
     background-repeat: no-repeat;
-[data-theme="dark"] & {
-  background-image: url(/public/step-up-logo-dark.svg);;
-}
+
+    [data-theme="dark"] & {
+      background-image: url(/public/step-up-logo-dark.svg);
+      ;
+    }
   }
- 
+
 
   &__nav {
     @include m.flex($align: center, $gap: f.spacing(4));
@@ -53,6 +55,7 @@
 
   &__switcher {
     @include m.flex($align: center, $justify: center);
+    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -62,8 +65,34 @@
     cursor: pointer;
 
     svg {
+      position: absolute;
       width: 18px;
       height: 18px;
+      transition: opacity 0.25s ease, transform 0.35s ease;
+    }
+  }
+
+
+  &__icon--sun {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+  }
+
+  &__icon--moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+
+  [data-theme="dark"] & {
+    &__icon--sun {
+      opacity: 1;
+      transform: rotate(0) scale(1);
+    }
+
+    &__icon--moon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.5);
     }
   }
 }

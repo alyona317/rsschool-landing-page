@@ -100,8 +100,9 @@
   }
 
   &__cta {
-    @extend %btn-primary;
-    padding: f.spacing(2) f.spacing(5);
-    font-size: 0.95rem;
+    @extend %btn-accent;
+    align-self: flex-start;
+    margin-top: f.spacing(1);
+    cursor: pointer;
   }
 }

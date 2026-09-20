@@ -117,5 +117,6 @@
     @extend %btn-accent;
     align-self: flex-start;
     margin-top: f.spacing(1);
+    cursor: pointer;
   }
 }

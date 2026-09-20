@@ -21,7 +21,7 @@
   &__title {
     @include m.display-heading(clamp(1.75rem, 8vw, 4.5rem));
     color: c.$color-text;
-        margin: 0
+    margin: 0
   }
 
   &__controls {
@@ -39,21 +39,27 @@
     background: c.$color-bg;
     color: c.$color-text;
     cursor: pointer;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 
     svg {
       width: 18px;
       height: 18px;
     }
+
+    &:hover {
+      background: c.$raw-primary-dark;
+      border: 1px solid c.$raw-primary-dark;
+    }
   }
 
-&__track {
-  display: flex;
-  align-items: stretch; // все карточки в ряду — одной высоты, по самой высокой
-  gap: f.spacing(3);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
+  &__track {
+    display: flex;
+    align-items: stretch; // все карточки в ряду — одной высоты, по самой высокой
+    gap: f.spacing(3);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
 }
 
 .teacher-card {
@@ -64,7 +70,7 @@
   scroll-snap-align: start;
 
   @include m.respond-to(tablet) {
-    
+
     flex: 0 0 340px; // фиксированные 340px на планшете
   }
 

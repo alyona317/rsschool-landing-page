@@ -27,8 +27,15 @@
 }
 
 .category-tabs {
-  @include m.flex($justify: center, $gap: f.spacing(1.5), $wrap: wrap);
+  @include m.flex($justify: center, $gap: f.spacing(1.5), $wrap: wrap, $align: center);
   padding-bottom: f.spacing(5);
+  flex-direction: column;
+  
+
+  &__title {
+    @include m.display-heading(clamp(1.75rem, 8vw, 4.5rem));
+    margin-bottom: f.spacing(3);
+  }
 
   &__inner {
     @extend %container;
@@ -42,6 +49,10 @@
     &.is-active {
       @include m.pill-button(c.$color-primary, c.$color-on-primary);
     }
+      &:hover {
+    box-shadow: 0 12px 24px rgba(20, 20, 27, 0.08);
+    transform: translateY(-2px) scale(1.06);
+  }
   }
 }
 
@@ -63,10 +74,11 @@
   overflow: hidden;
   cursor: pointer;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
+  
 
   &:hover {
     box-shadow: 0 12px 24px rgba(20, 20, 27, 0.08);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.06);
   }
 
   &__media {
