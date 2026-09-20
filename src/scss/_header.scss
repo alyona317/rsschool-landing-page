@@ -53,9 +53,11 @@
       color: c.$color-primary;
     }
   }
-  &__buttons{
+
+  &__buttons {
     @include m.flex($align: center, $gap: f.spacing(4));
   }
+
   &__actions {
     @include m.flex($align: center, $gap: f.spacing(2));
   }

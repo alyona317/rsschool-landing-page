@@ -54,7 +54,7 @@
 
   &__track {
     display: flex;
-    align-items: stretch; // все карточки в ряду — одной высоты, по самой высокой
+    align-items: stretch;
     gap: f.spacing(3);
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -65,7 +65,7 @@
 .teacher-card {
   display: flex;
   flex-direction: column;
-  flex: 0 0 280px; // мобильный — фиксированные 280px, не меняются
+  flex: 0 0 280px;
   min-width: 0;
   scroll-snap-align: start;
 

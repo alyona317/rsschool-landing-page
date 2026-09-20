@@ -66,8 +66,21 @@
   &__inner {
     @extend %container;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: f.spacing(3);
+
+    @include m.respond-to(mobile) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include m.respond-to(tablet) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include m.respond-to(desktop) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
   }
 
   &__more {
@@ -155,8 +168,6 @@
   }
 }
 
-// Direction detail modal — shown over the catalog page when a card
-// is clicked. Static in this pass; opening/closing is wired up later.
 .modal-overlay {
   position: fixed;
   inset: 0;

@@ -3,8 +3,6 @@
 @use "typography" as t;
 @use "functions" as f;
 
-// Flexbox shorthand for the row/column groupings used throughout the
-// header, direction tabs, pricing grid and teacher cards.
 @mixin flex($direction: row, $align: stretch, $justify: flex-start, $gap: 0, $wrap: nowrap) {
   display: flex;
   flex-direction: $direction;
@@ -17,8 +15,7 @@
   }
 }
 
-// Media query keyed off the $breakpoints map in _variables.scss.
-// Usage: @include respond-to(tablet) { ... }
+
 @mixin respond-to($breakpoint) {
   @if map.has-key(v.$breakpoints, $breakpoint) {
     @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
@@ -29,8 +26,6 @@
   }
 }
 
-// Bold, uppercase display type — used for every section headline
-// (hero, "ТАНЦЕВАЛЬНЫЕ НАПРАВЛЕНИЯ", "СТОИМОСТЬ ЗАНЯТИЙ", ...).
 @mixin display-heading($size: t.$fs-h1) {
   font-family: t.$font-heading;
   font-weight: t.$fw-heavy;
@@ -40,8 +35,6 @@
   text-transform: uppercase;
 }
 
-// A solid, pill-shaped button. Pass any two colors — the button
-// only cares about background/foreground, not which brand color.
 @mixin pill-button($bg, $fg) {
   display: inline-flex;
   align-items: center;
@@ -69,8 +62,6 @@
   }
 }
 
-// Clamp text to a fixed number of lines (falls back to a single-line
-// ellipsis when $lines is 1).
 @mixin truncate($lines: 1) {
   @if $lines == 1 {
     overflow: hidden;
@@ -84,7 +75,6 @@
   }
 }
 
-// Hide content visually while keeping it available to screen readers.
 @mixin visually-hidden {
   position: absolute;
   width: 1px;

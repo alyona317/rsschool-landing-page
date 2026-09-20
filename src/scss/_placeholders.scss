@@ -4,15 +4,12 @@
 @use "functions" as f;
 @use "mixins" as m;
 
-// Centered content column, shared by every section.
 %container {
   max-width: v.$container-max;
   margin-inline: auto;
   padding-inline: f.spacing(3);
 }
 
-// A link that never shows the browser's underline — used for the
-// logo and nav items, which handle their own hover/active states.
 %link-quiet {
   color: inherit;
   text-decoration: none;
@@ -22,17 +19,13 @@
   }
 }
 
-// Rounded, padded surface — the base look shared by the direction
-// detail card, pricing cards and teacher cards. Uses $color-surface
-// rather than $color-bg so cards stay visually distinct from the page
-// background in dark mode too.
 %surface {
   background: c.$color-surface;
   border-radius: v.$radius-md;
   padding: f.spacing(3);
 }
 
-// The two button styles used across the site.
+
 %btn-primary {
   @include m.pill-button(c.$color-primary, c.$color-on-primary);
 }
@@ -41,7 +34,6 @@
   @include m.pill-button(c.$color-accent, c.$color-on-accent);
 }
 
-// Small rounded tag — "150+ направлений...", price duration labels.
 %badge {
   display: inline-flex;
   align-items: center;
