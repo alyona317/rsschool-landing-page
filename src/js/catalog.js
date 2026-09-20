@@ -2,7 +2,7 @@ export async function renderDirectionCards(){
     const grid =document.querySelector(".direction-grid__inner");
     if (!grid) return;
 
-    const response = await fetch("catalog.json");
+    const response = await fetch("/catalog.json");
     const data = await response.json();
 
     grid.innerHTML = data.directions.map(direction =>
