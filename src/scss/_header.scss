@@ -9,7 +9,8 @@
   padding-block: f.spacing(2);
 
   &__inner {
-    @include m.flex($align: center, $justify: space-between, $gap: f.spacing(2), $wrap: wrap);
+    @include m.flex($align: center, $justify: space-between, $gap: f.spacing(1), $wrap: wrap);
+    position: relative;
   }
 
   &__logo {
@@ -28,10 +29,14 @@
 
 
   &__nav {
-    @include m.flex($align: center, $gap: f.spacing(4));
+    display: none;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include m.respond-to(tablet) {
+      @include m.flex($align: center, $gap: f.spacing(2));
+    }
   }
 
   &__link {
@@ -48,7 +53,9 @@
       color: c.$color-primary;
     }
   }
-
+  &__buttons{
+    @include m.flex($align: center, $gap: f.spacing(4));
+  }
   &__actions {
     @include m.flex($align: center, $gap: f.spacing(2));
   }
@@ -94,5 +101,100 @@
       opacity: 0;
       transform: rotate(90deg) scale(0.5);
     }
+  }
+}
+
+.hamburger-button {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @include m.respond-to(tablet) {
+    display: none;
+  }
+
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: c.$raw-primary;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.menu-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: c.$raw-bg-light;
+  padding: 1rem 0;
+  list-style-type: none;
+  margin: 0;
+  display: none;
+  z-index: 50;
+
+  [data-theme="dark"] & {
+    background-color: c.$raw-bg-dark;
+  }
+}
+
+.menu-items li {
+  padding: 0.5rem 1rem;
+}
+
+.menu-items li a {
+  @extend %link-quiet;
+  font-weight: t.$fw-semibold;
+  font-size: 0.95rem;
+  color: c.$color-muted;
+
+  &:hover {
+    color: c.$color-text;
+  }
+
+  &.is-active {
+    color: c.$color-primary;
+  }
+}
+
+.menu-active {
+  display: block;
+}
+
+.hamburger-button.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-button.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+.menu-items.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

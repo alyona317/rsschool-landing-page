@@ -43,21 +43,37 @@
           <li><a class="header__link" href="catalog.html">Каталог</a></li>
         </ul>
       </nav>
-      <div class="header__actions">
-        <button class="header__switcher" type="button" data-theme-toggle aria-label="Переключить тему">
+<div class="header__buttons">
+        <div class="header__actions">
+          <button class="header__switcher" type="button" data-theme-toggle aria-label="Переключить тему">
 
-          <svg class="header__icon header__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.8">
-            <circle cx="12" cy="12" r="4.3" />
-            <path
-              d="M12 2.5v2.8M12 18.7v2.8M4.4 4.4l2 2M17.6 17.6l2 2M2.5 12h2.8M18.7 12h2.8M4.4 19.6l2-2M17.6 6.4l2-2" />
-          </svg>
+            <svg class="header__icon header__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8">
+              <circle cx="12" cy="12" r="4.3" />
+              <path
+                d="M12 2.5v2.8M12 18.7v2.8M4.4 4.4l2 2M17.6 17.6l2 2M2.5 12h2.8M18.7 12h2.8M4.4 19.6l2-2M17.6 6.4l2-2" />
+            </svg>
 
-          <svg class="header__icon header__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.8" stroke-linejoin="round">
-            <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" />
-          </svg>
+            <svg class="header__icon header__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linejoin="round">
+              <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" />
+            </svg>
+          </button>
+        </div>
+        <button class="hamburger-button" aria-label="Открыть меню" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
+        <nav>
+          <ul class="menu-items">
+            <li><a href="#directions">Стили танца</a></li>
+            <li><a href="#pricing">Стоимость</a></li>
+            <li><a href="#teachers">Педагоги</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
@@ -211,7 +227,8 @@
         <div class="teachers__track">
           <article class="teacher-card">
             <div class="teacher-card__photo">
-              <img class="teacher-card__img" src="/public/images/teachers/jim.gif" alt="Эйс Винтура" viewBox="0 0 200 200" aria-hidden="true" />
+              <img class="teacher-card__img" src="/public/images/teachers/jim.gif" alt="Эйс Винтура"
+                viewBox="0 0 200 200" aria-hidden="true" />
             </div>
             <h3 class="teacher-card__name">Эйс Винтура</h3>
             <p class="teacher-card__styles">балет</p>
@@ -219,7 +236,8 @@
           </article>
           <article class="teacher-card">
             <div class="teacher-card__photo">
-              <img class="teacher-card__img" src="/public/images/teachers/michel.gif" alt="Майкл Скотт" viewBox="0 0 200 200" aria-hidden="true" />
+              <img class="teacher-card__img" src="/public/images/teachers/michel.gif" alt="Майкл Скотт"
+                viewBox="0 0 200 200" aria-hidden="true" />
             </div>
             <h3 class="teacher-card__name">Майкл Скотт</h3>
             <p class="teacher-card__styles">паркур</p>
@@ -227,7 +245,8 @@
           </article>
           <article class="teacher-card">
             <div class="teacher-card__photo">
-              <img class="teacher-card__img" src="/public/images/teachers/pikachu.gif" alt="Пикачу" viewBox="0 0 200 200" aria-hidden="true" />
+              <img class="teacher-card__img" src="/public/images/teachers/pikachu.gif" alt="Пикачу"
+                viewBox="0 0 200 200" aria-hidden="true" />
             </div>
             <h3 class="teacher-card__name">Пикачу</h3>
             <p class="teacher-card__styles">хип-хоп, брейк данс</p>
@@ -248,7 +267,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer" id="contacts">
