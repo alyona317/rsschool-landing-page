@@ -71,11 +71,11 @@
 
   @include m.respond-to(tablet) {
 
-    flex: 0 0 340px; // фиксированные 340px на планшете
+    flex: 0 0 340px;
   }
 
   @include m.respond-to(desktop) {
-    flex: 0 0 360px; // фиксированные 360px на десктопе
+    flex: 0 0 360px;
   }
 
   &__photo {
@@ -83,8 +83,14 @@
     aspect-ratio: 3 / 4;
     border-radius: v.$radius-md;
     overflow: hidden;
-    background: linear-gradient(160deg, c.$color-accent 0%, c.$color-accent-dark 100%);
+   
     margin-bottom: f.spacing(2);
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
   }
 
   &__blob {

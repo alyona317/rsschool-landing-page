@@ -81,17 +81,6 @@
   }
 }
 
-&__media {
-  align-self: center;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: f.spacing(1.5);
-  background: linear-gradient(135deg, c.$color-primary-light, c.$color-primary);
-
-  @include m.respond-to(tablet) {
-    width: 280px;
-  }
-}
   &__content {
     @include m.flex($direction: column, $justify: center, $gap: f.spacing(2));
     flex: 1;

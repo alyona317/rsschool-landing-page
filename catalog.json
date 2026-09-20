@@ -54,14 +54,6 @@
       "image": "/images/teachers/single/ballet.gif"
     },
     {
-      "id": "ballet",
-      "category": "single",
-      "name": "Балет",
-      "description": "Классический танец: грация, техника и выразительность.",
-      "duration": "60 мин",
-      "image": "/images/teachers/single/jim.gif"
-    },
-    {
       "id": "contemp",
       "category": "single",
       "name": "Контемп",
