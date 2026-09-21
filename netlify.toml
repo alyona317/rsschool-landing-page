@@ -1,6 +1,12 @@
+toml
 [build]
   command = "npm run build"
   publish = "dist"
 
-[[post_processing]]
-  skip = true
+[context.production]
+  command = "npm run build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
