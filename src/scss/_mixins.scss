@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "variables" as v;
+@use "typography" as t;
+@use "functions" as f;
+
+@mixin flex($direction: row, $align: stretch, $justify: flex-start, $gap: 0, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+
+@mixin respond-to($breakpoint) {
+  @if map.has-key(v.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint `#{$breakpoint}`. Check $breakpoints in _variables.scss.";
+  }
+}
+
+@mixin display-heading($size: t.$fs-h1) {
+  font-family: t.$font-heading;
+  font-weight: t.$fw-heavy;
+  font-size: $size;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+@mixin pill-button($bg, $fg) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: f.spacing(1);
+  border: none;
+  border-radius: v.$radius-pill;
+  padding: f.spacing(2) f.spacing(4);
+  font-family: t.$font-body;
+  font-weight: t.$fw-semibold;
+  font-size: t.$fs-small;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: $bg;
+  color: $fg;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,47 @@
+@use "colors" as c;
+@use "variables" as v;
+@use "typography" as t;
+@use "functions" as f;
+@use "mixins" as m;
+
+%container {
+  max-width: v.$container-max;
+  margin-inline: auto;
+  padding-inline: f.spacing(3);
+}
+
+%link-quiet {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+%surface {
+  background: c.$color-surface;
+  border-radius: v.$radius-md;
+  padding: f.spacing(3);
+}
+
+
+%btn-primary {
+  @include m.pill-button(c.$color-primary, c.$color-on-primary);
+}
+
+%btn-accent {
+  @include m.pill-button(c.$color-accent, c.$color-on-accent);
+}
+
+%badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: v.$radius-pill;
+  padding: f.spacing(1) f.spacing(2);
+  font-family: t.$font-body;
+  font-weight: t.$fw-semibold;
+  font-size: t.$fs-small;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}

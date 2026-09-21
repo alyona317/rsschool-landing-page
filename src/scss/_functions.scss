@@ -1,0 +1,5 @@
+@use "variables" as v;
+
+@function spacing($multiplier) {
+  @return v.$spacing-unit * $multiplier;
+}

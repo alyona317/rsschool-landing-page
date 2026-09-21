@@ -1,0 +1,171 @@
+{
+  "categories": [
+    { "id": "single", "label": "Одиночные" },
+    { "id": "couples", "label": "Парные" },
+    { "id": "other", "label": "Другое" }
+  ],
+  "directions": [
+    {
+      "id": "hip-hop",
+      "category": "single",
+      "name": "Хип-хоп",
+      "description": "Уличный стиль с акцентом на ритм, характер и импровизацию.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/happy-guy.gif"
+    },
+    {
+      "id": "hip-hop",
+      "category": "single",
+      "name": "Хип-хоп",
+      "description": "Уличный стиль с акцентом на ритм, характер и импровизацию.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/dadah.gif"
+    },
+    {
+      "id": "strip-plastic",
+      "category": "single",
+      "name": "Стрип-пластика",
+      "description": "Пластика, женственность и уверенность в движении.",
+      "duration": "55 мин",
+      "image": "/images/teachers/single/stripper.gif"
+    },
+    {
+      "id": "break-dance",
+      "category": "single",
+      "name": "Брейк данс",
+      "description": "Акробатика, сила и техника на полу и в стойке.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/napolean.gif"
+    },
+    {
+      "id": "jazz-funk",
+      "category": "single",
+      "name": "Джаз-фанк",
+      "description": "Энергичный микс джаза и уличных стилей.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/borat.gif"
+    },
+    {
+      "id": "ballet",
+      "category": "single",
+      "name": "Балет",
+      "description": "Классический танец: грация, техника и выразительность.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/ballet.gif"
+    },
+    {
+      "id": "contemp",
+      "category": "single",
+      "name": "Контемп",
+      "description": "Современный танец: свобода тела и выразительность.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/backrooms.gif"
+    },
+    {
+      "id": "acting",
+      "category": "other",
+      "name": "Актёрское мастерство в танце",
+      "description": "Как передавать эмоции и образ через движение, а не только технику.",
+      "duration": "55 мин",
+      "image": "/images/teachers/other/friends2.gif"
+    },
+
+    {
+      "id": "jazz-funk",
+      "category": "single",
+      "name": "Джаз-фанк",
+      "description": "Энергичный микс джаза и уличных стилей.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/girl.gif"
+    },
+    {
+      "id": "heels",
+      "category": "single",
+      "name": "Хилс",
+      "description": "Танец на каблуках: грация, растяжка и харизма.",
+      "duration": "55 мин",
+      "image": "/images/teachers/single/mean_girls.gif"
+    },
+
+    {
+      "id": "dancehall",
+      "category": "single",
+      "name": "Дэнсхолл",
+      "description": "Ямайская энергетика, характерные движения и драйв.",
+      "duration": "55 мин",
+      "image": "/images/teachers/single/diaz.gif"
+    },
+    {
+      "id": "contemp",
+      "category": "single",
+      "name": "Контемп",
+      "description": "Современный танец: свобода тела и выразительность.",
+      "duration": "60 мин",
+      "image": "/images/teachers/single/shake.gif"
+    },
+    {
+      "id": "hip-hop",
+      "category": "single",
+      "name": "Хип-хоп",
+      "description": "Уличные движения в игровой форме — ритм, дружба и уверенность в себе.",
+      "duration": "45 мин",
+      "image": "/images/teachers/single/stepUp.gif"
+    },
+    {
+      "id": "bachata",
+      "category": "copules",
+      "name": "Бачата",
+      "description": "Парный латиноамериканский танец, чувственный и лёгкий.",
+      "duration": "55 мин",
+      "image": "/images/teachers/couples/dirty-dancing.gif"
+    },
+    {
+      "id": "salsa",
+      "category": "copules",
+      "name": "Сальса",
+      "description": "Парный латиноамериканский танец, энергичный и живой.",
+      "duration": "55 мин",
+      "image": "/images/teachers/couples/fiction.gif"
+    },
+    {
+      "id": "hastle",
+      "category": "copules",
+      "name": "Хастл",
+      "description": "Универсальный танец для вечеринок и праздников.",
+      "duration": "55 мин",
+      "image": "/images/teachers/couples/friends.gif"
+    },
+    {
+      "id": "kizomba",
+      "category": "copules",
+      "name": "Kизомба",
+      "description": "Это чувственный и романтичный танец с плавными движениями",
+      "duration": "55 мин",
+      "image": "/images/teachers/couples/30rocks.gif"
+    },
+    {
+      "id": "twerk",
+      "category": "single",
+      "name": "Тверк",
+      "description": "Современный танец, акцент на движениях таза и корпуса.",
+      "duration": "55 мин",
+      "image": "/images/teachers/other/pug.gif"
+    },
+    {
+      "id": "gymnastics",
+      "category": "single",
+      "name": "Гимнастика",
+      "description": "Физическая подготовка и развитие гибкости.",
+      "duration": "55 мин",
+      "image": "/images/teachers/other/gymnastics.gif"
+    },
+    {
+      "id": "parkur",
+      "category": "single",
+      "name": "Паркур",
+      "description": "Физическая подготовка и развитие гибкости.",
+      "duration": "55 мин",
+      "image": "/images/teachers/other/parkur.gif"
+    }
+  ]
+}
