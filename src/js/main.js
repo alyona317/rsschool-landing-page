@@ -38,6 +38,11 @@ hamburgerButton.addEventListener('click', () => {
 
   const isExpanded = hamburgerButton.classList.contains('active');
   hamburgerButton.setAttribute('aria-expanded', isExpanded);
+  if (isExpanded) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 });
 
 document.addEventListener('click', (event) => {
@@ -48,7 +53,15 @@ document.addEventListener('click', (event) => {
     hamburgerButton.classList.remove('active');
     menuItems.classList.remove('active');
     hamburgerButton.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = ''; 
   }
 });
 
-
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    hamburgerButton.classList.remove('active');
+    menuItems.classList.remove('active');
+    hamburgerButton.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = ''; 
+  }
+});

@@ -44,3 +44,6 @@ button {
 .container {
   @extend %container;
 }
+.no-scroll{
+    overflow: hidden;
+}
