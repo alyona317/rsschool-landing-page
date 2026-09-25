@@ -1,6 +1,7 @@
 import 'modern-normalize/modern-normalize.css';
 import '../scss/main.scss';
 import { renderDirectionCards } from './catalog.js';
+import {addTagClickHandler}  from './catalog.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderDirectionCards();
@@ -25,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem("theme", newTheme);
     currentThemeSetting = newTheme;
   })
+
+  addTagClickHandler();
 
 })
 
