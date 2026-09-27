@@ -87,10 +87,15 @@
     @include m.pill-button(transparent, c.$color-text);
     border: 1px solid c.$color-border;
     margin: f.spacing(5) auto 0;
+    transition: all 0.3s ease;
 
     &:hover {
       box-shadow: 0 12px 24px rgba(20, 20, 27, 0.08);
       transform: translateY(-2px) scale(1.06);
+    }
+
+    &:active {
+      transform: scale(0.98);
     }
   }
 }

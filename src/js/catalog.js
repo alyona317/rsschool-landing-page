@@ -1,14 +1,19 @@
+const CARDS_PER_PAGE = 3;
+let visibleCount = CARDS_PER_PAGE;
+let currentCategory = "все";
+
 export async function renderDirectionCards() {
   const grid = document.querySelector(".direction-grid__inner");
   if (!grid) return;
 
   const response = await fetch("/catalog.json");
   const data = await response.json();
+  
 
-  grid.innerHTML = data.directions
-    .map(
-      (direction) =>
-        `           <article class="direction-card" data-category="${direction.category}">
+    grid.innerHTML = data.directions
+      .map(
+        (direction) =>
+          `           <article class="direction-card" data-category="${direction.category}">
           <div class="direction-card__media">
             <img src="${direction.image}" alt="${direction.name}" loading="lazy" />
           </div>
@@ -20,8 +25,10 @@ export async function renderDirectionCards() {
             </div>
           </div>
         </article>`,
-    )
-    .join("");
+      )
+      .join("");
+    initLoadMore();
+  updateCardVisibility();
 }
 
 export const addTagClickHandler = function () {
@@ -34,10 +41,13 @@ export const addTagClickHandler = function () {
       let clickedTag = e.target;
       removeSelectedTags();
       selectedTag(clickedTag);
+       currentCategory = e.target.innerText.toLowerCase();
+      visibleCount = CARDS_PER_PAGE;
       if (e.target.innerText.toLowerCase() === "все") {
         showAllCards();
       } else {
         filterCardBySelectorTag(e.target.innerText);
+        updateCardVisibility();
       }
     }
   });
@@ -74,3 +84,52 @@ const filterCardBySelectorTag = function (selectedTag) {
     }
   });
 };
+
+const initLoadMore = function () {
+  const loadButton = document.querySelector(".direction-grid__more");
+  if (loadButton) {
+    loadButton.addEventListener('click', () => {
+      visibleCount += CARDS_PER_PAGE;
+      updateCardVisibility();
+    });
+  }
+};
+
+const updateCardVisibility = function () {
+const cards = document.querySelectorAll(".direction-card:not(.hidden)");
+  let visibleIndex = 0;
+ 
+  cards.forEach((card) => {
+    if (visibleIndex < visibleCount) {
+      card.style.display = "";
+      visibleIndex++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+ 
+  updateLoadMoreButton(cards.length, visibleCount);
+};
+
+const updateLoadMoreButton = function (totalVisible, currentVisible) {
+const loadMoreBtn = document.querySelector(".direction-grid__more");
+ 
+  if (!loadMoreBtn) return;
+ 
+  if (currentVisible >= totalVisible) {
+    hideLoadMoreButton();
+  } else {
+    loadMoreBtn.style.display = "block";
+  }
+};
+
+const hideLoadMoreButton = function () {
+  const loadMoreBtn = document.querySelector(".direction-grid__more");
+  if (loadMoreBtn) {
+    loadMoreBtn.style.display = "none";
+  }
+};
+
+window.addEventListener("resize", () => {
+  updateCardVisibility();
+});
