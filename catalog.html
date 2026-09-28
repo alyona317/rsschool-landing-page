@@ -142,6 +142,53 @@
       </div>
     </footer>
   </main>
+
+  <div class="modal-overlay" id="direction-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="direction-modal-title">
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6l12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <div class="modal__media">
+        <img class="modal__image" src="" alt="" />
+      </div>
+      <div class="modal__body">
+        <h2 class="modal__title" id="direction-modal-title"></h2>
+        <p class="modal__description"></p>
+        <span class="modal__tag"></span>
+
+        <div class="modal__params">
+          <div class="modal__param-group">
+            <span class="modal__param-title">Количество занятий</span>
+            <div class="modal__param-options">
+              <button class="modal__param-option" type="button" data-count="1">1 занятие</button>
+              <button class="modal__param-option" type="button" data-count="4">4 занятия</button>
+              <button class="modal__param-option" type="button" data-count="8">8 занятий</button>
+            </div>
+          </div>
+          <div class="modal__param-group">
+            <span class="modal__param-title">Время занятий</span>
+            <div class="modal__param-options">
+              <button class="modal__param-option" type="button" data-time="утро">Утро</button>
+              <button class="modal__param-option" type="button" data-time="вечер">Вечер</button>
+              <button class="modal__param-option" type="button" data-time="день">Весь день</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="modal__summary"></p>
+
+        <div class="modal__total">
+          <span class="modal__total-label">Итого:</span>
+          <span class="modal__total-value"></span>
+        </div>
+
+        <button class="modal__action" type="button" data-modal-close>Записаться</button>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="/src/js/main.js"></script>
 </body>
 
