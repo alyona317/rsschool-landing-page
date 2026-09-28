@@ -34,6 +34,7 @@ export async function renderDirectionCards() {
 
 export const addTagClickHandler = function () {
   const tag = document.querySelector(".category-tabs__inner");
+  if (!tag) return;
 
   tag.addEventListener("click", (e) => {
     if (e.target.classList.contains("category-tabs__btn")) {

@@ -1,7 +1,8 @@
 import 'modern-normalize/modern-normalize.css';
 import '../scss/main.scss';
 import { renderDirectionCards } from './catalog.js';
-import {addTagClickHandler}  from './catalog.js';
+import {addTagClickHandler } from './catalog.js';
+import { initTeachersCarousel } from './teachers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderDirectionCards();
@@ -27,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     currentThemeSetting = newTheme;
   })
 
+  initTeachersCarousel();
   addTagClickHandler();
+  addTabClickHandler();
 
 })
 
@@ -68,3 +71,39 @@ document.addEventListener('keydown', (event) => {
     document.body.style.overflow = ''; 
   }
 });
+
+
+//direction tags
+
+const addTabClickHandler = async function () {
+  const tab = document.querySelector(".directions__tabs");
+  if (!tab) return;
+
+  const response = await fetch("/catalog.json");
+  const data = await response.json();
+
+  tab.addEventListener("click", (e) => {
+    if (e.target.classList.contains("directions__tab")) {
+      let clickedTab = e.target;
+
+      removeSelectedTabs();
+      selectedTab(clickedTab);
+      const directionName = document.querySelector('.directions__name');
+      const directionDescription = document.querySelector('.directions__description');
+
+      const directionIndex = data.directions_descriptions.findIndex(item => item.id === e.target.textContent.trim().toLowerCase());
+      if (directionIndex === -1) return;
+
+      directionName.textContent = clickedTab.textContent.trim();
+      directionDescription.textContent = data.directions_descriptions[directionIndex].description;
+    }
+  });
+};
+const removeSelectedTabs = function () {
+  const tabs = document.querySelectorAll(".directions__tab");
+  tabs.forEach((tab) => tab.classList.remove("is-active"));
+};
+
+const selectedTab = function (clickedTab) {
+  clickedTab.classList.add("is-active");
+};
