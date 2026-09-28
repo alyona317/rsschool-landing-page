@@ -60,6 +60,32 @@
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
   }
+
+  &__dots {
+    @include m.flex($justify: center, $align: center, $gap: f.spacing(1));
+    margin-top: f.spacing(4);
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: c.$color-border;
+    cursor: pointer;
+    transition: background-color 0.25s ease, width 0.25s ease;
+
+    &:hover {
+      background: c.$color-muted;
+    }
+
+    &.is-active {
+      width: 22px;
+      border-radius: v.$radius-pill;
+      background: c.$color-primary;
+    }
+  }
 }
 
 .teacher-card {
