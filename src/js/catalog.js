@@ -8,12 +8,11 @@ export async function renderDirectionCards() {
 
   const response = await fetch("/catalog.json");
   const data = await response.json();
-  
 
-    grid.innerHTML = data.directions
-      .map(
-        (direction, index) =>
-          `           <article class="direction-card" data-category="${direction.category}" data-index="${index}">
+  grid.innerHTML = data.directions
+    .map(
+      (direction, index) =>
+        `           <article class="direction-card" data-category="${direction.category}" data-index="${index}">
           <div class="direction-card__media">
             <img src="${direction.image}" alt="${direction.name}" loading="lazy" />
           </div>
@@ -25,10 +24,10 @@ export async function renderDirectionCards() {
             </div>
           </div>
         </article>`,
-      )
-      .join("");
-    initDirectionModal(grid, data.directions);
-    initLoadMore();
+    )
+    .join("");
+  initDirectionModal(grid, data.directions);
+  initLoadMore();
   updateCardVisibility();
 }
 
@@ -43,7 +42,7 @@ export const addTagClickHandler = function () {
       let clickedTag = e.target;
       removeSelectedTags();
       selectedTag(clickedTag);
-       currentCategory = e.target.innerText.toLowerCase();
+      currentCategory = e.target.innerText.toLowerCase();
       visibleCount = CARDS_PER_PAGE;
       if (e.target.innerText.toLowerCase() === "все") {
         showAllCards();
@@ -90,7 +89,7 @@ const filterCardBySelectorTag = function (selectedTag) {
 const initLoadMore = function () {
   const loadButton = document.querySelector(".direction-grid__more");
   if (loadButton) {
-    loadButton.addEventListener('click', () => {
+    loadButton.addEventListener("click", () => {
       visibleCount += CARDS_PER_PAGE;
       updateCardVisibility();
     });
@@ -98,9 +97,9 @@ const initLoadMore = function () {
 };
 
 const updateCardVisibility = function () {
-const cards = document.querySelectorAll(".direction-card:not(.hidden)");
+  const cards = document.querySelectorAll(".direction-card:not(.hidden)");
   let visibleIndex = 0;
- 
+
   cards.forEach((card) => {
     if (visibleIndex < visibleCount) {
       card.style.display = "";
@@ -109,15 +108,15 @@ const cards = document.querySelectorAll(".direction-card:not(.hidden)");
       card.style.display = "none";
     }
   });
- 
+
   updateLoadMoreButton(cards.length, visibleCount);
 };
 
 const updateLoadMoreButton = function (totalVisible, currentVisible) {
-const loadMoreBtn = document.querySelector(".direction-grid__more");
- 
+  const loadMoreBtn = document.querySelector(".direction-grid__more");
+
   if (!loadMoreBtn) return;
- 
+
   if (currentVisible >= totalVisible) {
     hideLoadMoreButton();
   } else {
@@ -136,11 +135,10 @@ window.addEventListener("resize", () => {
   updateCardVisibility();
 });
 
-
 const BASE_PRICE_BY_CATEGORY = {
-  "одиночные": 650,
-  "парные": 750,
-  "другое": 700,
+  одиночные: 650,
+  парные: 750,
+  другое: 700,
 };
 const DEFAULT_BASE_PRICE = 650;
 
@@ -151,9 +149,9 @@ const COUNT_OPTIONS = {
 };
 
 const TIME_OPTIONS = {
-  "утро": { label: "Утро", factor: 0.95 },
-  "вечер": { label: "Вечер", factor: 1 },
-  "день": { label: "Весь день", factor: 1.1 },
+  утро: { label: "Утро", factor: 0.95 },
+  вечер: { label: "Вечер", factor: 1 },
+  день: { label: "Весь день", factor: 1.1 },
 };
 
 const calcPrice = function (direction, count, time) {
@@ -189,7 +187,10 @@ const initDirectionModal = function (grid, directions) {
 
   const syncActiveButtons = function () {
     countButtons.forEach((btn) => {
-      btn.classList.toggle("is-active", Number(btn.dataset.count) === selectedCount);
+      btn.classList.toggle(
+        "is-active",
+        Number(btn.dataset.count) === selectedCount,
+      );
     });
     timeButtons.forEach((btn) => {
       btn.classList.toggle("is-active", btn.dataset.time === selectedTime);

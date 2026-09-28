@@ -1,77 +1,77 @@
-import 'modern-normalize/modern-normalize.css';
-import '../scss/main.scss';
-import { renderDirectionCards } from './catalog.js';
-import {addTagClickHandler } from './catalog.js';
-import { initTeachersCarousel } from './teachers.js';
+import "modern-normalize/modern-normalize.css";
+import "../scss/main.scss";
+import { renderDirectionCards } from "./catalog.js";
+import { addTagClickHandler } from "./catalog.js";
+import { initTeachersCarousel } from "./teachers.js";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   renderDirectionCards();
   function highlightActiveNavLink() {
-    const links = document.querySelectorAll('.site-header__link');
-    const currentPath = window.location.pathname.replace(/\/$/, '') || '/index.html';
+    const links = document.querySelectorAll(".site-header__link");
+    const currentPath =
+      window.location.pathname.replace(/\/$/, "") || "/index.html";
 
     links.forEach((link) => {
-      const linkPath = new URL(link.href).pathname.replace(/\/$/, '') || '/index.html';
-      link.classList.toggle('is-active', linkPath === currentPath);
+      const linkPath =
+        new URL(link.href).pathname.replace(/\/$/, "") || "/index.html";
+      link.classList.toggle("is-active", linkPath === currentPath);
     });
   }
 
-  document.addEventListener('DOMContentLoaded', highlightActiveNavLink);
+  document.addEventListener("DOMContentLoaded", highlightActiveNavLink);
 
-  const button = document.querySelector("[data-theme-toggle]")
-  button.addEventListener('click', () => {
-    const newTheme = currentThemeSetting === 'dark' ? 'light' : 'dark';
-    const newText = newTheme === 'dark' ? "Change to light theme" : "Change to dark theme";
+  const button = document.querySelector("[data-theme-toggle]");
+  button.addEventListener("click", () => {
+    const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+    const newText =
+      newTheme === "dark" ? "Change to light theme" : "Change to dark theme";
     button.setAttribute("aria-lable", newText);
     document.querySelector("html").setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
     currentThemeSetting = newTheme;
-  })
+  });
 
   initTeachersCarousel();
   addTagClickHandler();
   addTabClickHandler();
+});
 
-})
+const hamburgerButton = document.querySelector(".hamburger-button");
+const menuItems = document.querySelector(".menu-items");
 
-const hamburgerButton = document.querySelector('.hamburger-button');
-const menuItems = document.querySelector('.menu-items');
+hamburgerButton.addEventListener("click", () => {
+  hamburgerButton.classList.toggle("active");
+  menuItems.classList.toggle("active");
 
-hamburgerButton.addEventListener('click', () => {
-
-  hamburgerButton.classList.toggle('active');
-  menuItems.classList.toggle('active');
-
-  const isExpanded = hamburgerButton.classList.contains('active');
-  hamburgerButton.setAttribute('aria-expanded', isExpanded);
+  const isExpanded = hamburgerButton.classList.contains("active");
+  hamburgerButton.setAttribute("aria-expanded", isExpanded);
   if (isExpanded) {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   } else {
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
   }
 });
 
-document.addEventListener('click', (event) => {
-  const isClickInside = hamburgerButton.contains(event.target) ||
-    menuItems.contains(event.target);
+document.addEventListener("click", (event) => {
+  const isClickInside =
+    hamburgerButton.contains(event.target) || menuItems.contains(event.target);
 
-  if (!isClickInside && menuItems.classList.contains('active')) {
-    hamburgerButton.classList.remove('active');
-    menuItems.classList.remove('active');
-    hamburgerButton.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = ''; 
+  if (!isClickInside && menuItems.classList.contains("active")) {
+    hamburgerButton.classList.remove("active");
+    menuItems.classList.remove("active");
+    hamburgerButton.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   }
 });
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    hamburgerButton.classList.remove('active');
-    menuItems.classList.remove('active');
-    hamburgerButton.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = ''; 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    hamburgerButton.classList.remove("active");
+    menuItems.classList.remove("active");
+    hamburgerButton.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   }
 });
-
 
 //direction tags
 
@@ -88,14 +88,19 @@ const addTabClickHandler = async function () {
 
       removeSelectedTabs();
       selectedTab(clickedTab);
-      const directionName = document.querySelector('.directions__name');
-      const directionDescription = document.querySelector('.directions__description');
+      const directionName = document.querySelector(".directions__name");
+      const directionDescription = document.querySelector(
+        ".directions__description",
+      );
 
-      const directionIndex = data.directions_descriptions.findIndex(item => item.id === e.target.textContent.trim().toLowerCase());
+      const directionIndex = data.directions_descriptions.findIndex(
+        (item) => item.id === e.target.textContent.trim().toLowerCase(),
+      );
       if (directionIndex === -1) return;
 
       directionName.textContent = clickedTab.textContent.trim();
-      directionDescription.textContent = data.directions_descriptions[directionIndex].description;
+      directionDescription.textContent =
+        data.directions_descriptions[directionIndex].description;
     }
   });
 };
